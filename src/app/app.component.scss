@@ -1,0 +1,55 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #eef2f3; /* Color de fondo suave */
+}
+
+header {
+  background-color: #007BFF; /* Azul más intenso */
+  color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el header */
+}
+
+.menu nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: #343a40; /* Color oscuro para la barra */
+  height: 100vh; /* 100% de la altura de la ventana */
+  width: 220px; 
+  position: fixed; /* Fijo para que no se mueva con el scroll */
+  top: 0;
+  left: 0;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2); /* Sombra para la barra lateral */
+  z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+.menu nav a {
+  color: #f8f9fa; /* Color de texto claro */
+  padding: 15px 20px; 
+  text-decoration: none;
+  text-align: left;
+  width: 100%;
+  border-bottom: 1px solid #495057; /* Línea separadora entre enlaces */
+  transition: background-color 0.3s; 
+}
+
+.menu nav a:hover {
+  background-color: #007BFF; /* Color de fondo al pasar el mouse */
+}
+
+main {
+  margin-left: 240px; /* Deja espacio para la barra de navegación */
+  padding: 20px;
+  overflow: auto; /* Asegúrate de que el contenido no se desborde */
+}
+
+footer {
+  margin-left: 240px; /* Deja espacio para la barra de navegación */
+  padding: 20px; /* Espacio alrededor del pie de página */
+  background-color: #f8f9fa; /* Fondo del pie de página */
+}

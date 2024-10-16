@@ -30,6 +30,7 @@
                 "glob": "**/*",
                 "input": "public"
               }
+              ,"src/assets"
             ],
             "styles": [
               "src/styles.scss"
@@ -98,5 +99,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "6719b538-0eca-41b8-966f-2f0b1ef38bd3"
   }
 }
