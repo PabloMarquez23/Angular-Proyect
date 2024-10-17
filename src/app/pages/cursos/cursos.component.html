@@ -1,21 +1,22 @@
+<!-- Formulario para agregar cursos -->
+<section id="agregar-curso">
+    <h2>Registrar nuevo curso</h2>
+    <form id="course-form" (ngSubmit)="agregarCurso($event)">
+        <label for="course-name">Nombre del curso:</label>
+        <input type="text" id="course-name" [(ngModel)]="materia" pattern="[A-Za-z ]+" placeholder="Ingresa nombre de la materia" required name="course-name">
 
-<section id="cursosagg" class="aggr">
-    <form id="curso-form" onsubmit="agregarCurso(event)"> <!-- Formulario para agregar un nuevo curso -->
-        <label for="nombre-materia">Nombre de la materia:</label> <!-- Etiqueta para el campo de nombre de la materia -->
-        <input type="text" id="nombre-materia" name="nombre-materia" pattern="[A-Za-z ]+" placeholder="Ingresa nombre de la materia" required> <!-- Campo de entrada para el nombre de la materia -->
-        
-        <label for="nombre-profesor">Nombre del profesor:</label> <!-- Etiqueta para el campo de nombre del profesor -->
-        <input type="text" id="nombre-profesor" name="nombre-profesor" pattern="[A-Za-z ]+" placeholder="Ingresa el nombre del profesor" required> <!-- Campo de entrada para el nombre del profesor -->
-        
-        <label for="start">Fecha de Inicio:</label> <!-- Etiqueta para el campo de fecha de inicio -->
-        <input type="date" id="start" name="start" required> <!-- Campo de entrada para la fecha de inicio -->
+        <label for="instructor-name">Nombre del instructor:</label>
+        <input type="text" id="instructor-name" [(ngModel)]="profesor"  required name="instructor-name">
 
-        <label for="end">Fecha de Fin:</label> <!-- Etiqueta para el campo de fecha de fin -->
-        <input type="date" id="end" name="end" required> <!-- Campo de entrada para la fecha de fin -->
+        <label for="start-date">Fecha de inicio:</label>
+        <input type="date" id="start-date" [(ngModel)]="fechaInicio" required name="start-date">
 
-        <label for="descripcion">Descripción:</label> <!-- Etiqueta para el campo de descripción -->
-        <textarea id="descripcion" name="descripcion" placeholder="Ingresa una descripción" required></textarea> <!-- Campo de texto para la descripción -->
+        <label for="duration">Fecha Fin:</label>
+        <input type="date" id="duration" [(ngModel)]="fechaFin" required min="1" name="duration">
 
-        <input type="submit" value="Agregar" class="boton"> <!-- Botón para enviar el formulario y agregar un curso -->
+        <label for="description">Descripción:</label>
+        <textarea id="description" [(ngModel)]="descripcion" required name="description"></textarea>
+
+        <button type="submit">Agregar Curso</button>
     </form>
 </section>

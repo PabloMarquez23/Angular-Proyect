@@ -1,0 +1,19 @@
+<!-- Sección de Cursos -->
+<section id="cursos" class="container">
+    <h2>Lista de Cursos</h2>
+    <div *ngFor="let curso of getCursos(); let i = index" class="curso-card">
+      <h3><strong>Nombre del curso:</strong> {{ curso.materia }}</h3>
+      <p><strong>Profesor:</strong> {{ curso.profesor }}</p>
+      <p><strong>Fecha de inicio:</strong> {{ curso.fechaInicio | date: 'yyyy-MM-dd' }}</p>
+      <p><strong>Fecha fin:</strong> {{ curso.fechaFin }} meses</p>
+      <div class="button-group">
+        <button class="btn btn-info" (click)="verDetalles(i)">Ver más detalles</button>
+        <button class="btn btn-danger" (click)="eliminarCurso(curso)">Eliminar curso</button>
+      </div>
+  
+      <!-- Sección de Detalles -->
+      <div *ngIf="cursoSeleccionadoId === i" class="curso-detalles">
+        <h3>Detalles del Curso</h3>
+        <p><strong>Descripción:</strong> {{ curso.descripcion }}</p>
+        
+    </div>
