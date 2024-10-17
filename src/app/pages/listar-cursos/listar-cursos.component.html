@@ -1,13 +1,16 @@
-<div class="lista-cursos">
-    <h2>Lista de Cursos</h2>
-    <div *ngFor="let curso of cursos" class="curso-item">
-      <p><strong>Nombre del curso:</strong> {{ curso.materia }}</p>
-      <p><strong>Profesor:</strong> {{ curso.profesor }}</p>
-      <p><strong>Fecha de inicio:</strong> {{ curso.fechaInicio }}</p>
-      <p><strong>Fecha de fin:</strong> {{ curso.fechaFin }}</p>
+<div id="lista-cursos">
+  <div *ngFor="let curso of cursos">
+    <p><strong>Nombre del curso:</strong> {{ curso.materia }}</p>
+    <p>Profesor: {{ curso.profesor }}</p>
+    <p>Fecha de inicio: {{ curso.fechaInicio }}</p>
+    <p>Fecha de fin: {{ curso.fechaFin }}</p>
+    
+    <button (click)="toggleDetalles(curso)">
+      {{ curso.mostrarDetalles ? 'Ocultar detalles' : 'Ver más detalles' }}
+    </button>
+
+    <div *ngIf="curso.mostrarDetalles">
       <p><strong>Descripción:</strong> {{ curso.descripcion }}</p>
     </div>
-  
-    <div *ngIf="cursos.length === 0">No hay cursos registrados.</div> <!-- Mensaje si no hay cursos -->
   </div>
-  
+</div>

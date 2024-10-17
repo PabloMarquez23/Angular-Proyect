@@ -1,12 +1,15 @@
 import { Routes } from '@angular/router';
-import { CursosComponent } from './pages/cursos/cursos.component'; // Importa desde "pages"
-import { ListarCursosComponent } from './components/listar-cursos/listar-cursos.component';
 import { ContactosComponent } from './pages/contactos/contactos.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
+import { ListarCursosComponent } from './pages/listar-cursos/listar-cursos.component';
+import { CursosComponent } from './pages/cursos/cursos.component';
+
+
+
 
 export const routes: Routes = [
-  { path: '', component: InicioComponent },
-  { path: 'cursos', component: ListarCursosComponent },
-  { path: 'agregar-cursos', component: CursosComponent },
-  { path: 'contactos', component: ContactosComponent },
+  { path: 'pages/inicio', component: InicioComponent }, // Página de inicio
+  { path: 'pages/cursos', component: ListarCursosComponent }, // Listar cursos
+  { path: 'pages/listar-cursos', component: CursosComponent }, // Agregar cursos
+  { path: 'pages/contactos', component: ContactosComponent }, // Página de contactos
 ];

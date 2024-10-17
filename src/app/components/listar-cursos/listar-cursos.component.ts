@@ -1,34 +1,35 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';  // Importa CommonModule
+
+interface Curso {
+  materia: string;
+  profesor: string;
+  fechaInicio: string;
+  fechaFin: string;
+  descripcion: string;
+  mostrarDetalles?: boolean; // Se añade para manejar la visibilidad de los detalles
+}
 
 @Component({
   selector: 'app-listar-cursos',
-  standalone: true,  // Si es standalone
-  imports: [CommonModule],  // Asegura que CommonModule está importado
+  standalone: true,
   templateUrl: './listar-cursos.component.html',
-  styleUrls: ['./listar-cursos.component.scss']
+  styleUrls: ['./listar-cursos.component.scss'],
+  imports: [CommonModule]
 })
 export class ListarCursosComponent {
-  cursos: any[] = [
-    {
-      materia: 'Matemáticas',
-      profesor: 'Juan Pérez',
-      fechaInicio: '2023-10-01',
-      fechaFin: '2023-12-15',
-      descripcion: 'Curso de matemáticas básicas',
-      mostrarDetalles: false
-    },
-    {
-      materia: 'Historia',
-      profesor: 'María López',
-      fechaInicio: '2023-11-01',
-      fechaFin: '2024-01-20',
-      descripcion: 'Curso de historia universal',
-      mostrarDetalles: false
-    }
-  ];
+  cursos: Curso[] = []; // Array para almacenar los cursos
 
-  toggleDetalles(curso: any) {
-    curso.mostrarDetalles = !curso.mostrarDetalles;
+  constructor() {
+    this.loadCursos(); // Cargar cursos al inicializar el componente
+  }
+
+  loadCursos() {
+    const cursosGuardados = localStorage.getItem('cursos');
+    this.cursos = cursosGuardados ? JSON.parse(cursosGuardados) : [];
+  }
+
+  toggleDetalles(curso: Curso) {
+    curso.mostrarDetalles = !curso.mostrarDetalles; // Alternar la visibilidad
   }
 }
