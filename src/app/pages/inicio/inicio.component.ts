@@ -7,24 +7,21 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-inicio',
   standalone: true,
-  imports: [CommonModule, AppComponent,RouterOutlet],
+  imports: [CommonModule, AppComponent, RouterOutlet],
   templateUrl: './inicio.component.html',
-  styleUrl: './inicio.component.scss'
+  styleUrls: ['./inicio.component.scss'] // Corrige esto, debe ser styleUrls
 })
 export class InicioComponent {
+  img: any = []; // Inicializa img como un array
 
-  img:any
-  constructor(private imgService: ApisInicioService){
+  constructor(private imgService: ApisInicioService) {}
 
-
-  }
   async ngOnInit(): Promise<void> {
-    // Esperar a que se carguen las imágenes
+    // Limpia imágenes al iniciar
+    this.imgService.clearImages(); // Llama al método que limpia las imágenes
     await this.imgService.addimg('Renzo', 'Beagle');
-    await this.imgService.addimg('Rambo', 'Koeker');
     
     // Asignar los datos de las imágenes a la variable
     this.img = this.imgService.getimg();
   }
-
 }
