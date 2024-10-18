@@ -1,42 +1,96 @@
-/* cursos.component.scss */
-
-.form {
-    max-width: 500px; 
-    margin: 60px auto 40px; /* Espacio inferior de 40px */
-    background: white; 
-    padding: 20px; 
-    border-radius: 8px; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+/* Estilos generales del formulario */
+#agregar-curso {
+    max-width: 600px;
+    margin: 80px auto; /* Centrar y agregar espacio superior e inferior */
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: all 0.3s ease;
 }
 
-label {
+#agregar-curso h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #3f51b5; /* Color vibrante para el título */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre los elementos */
+}
+
+/* Estilos para los labels */
+form label {
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
     margin-bottom: 5px;
-    font-weight: bold; 
 }
 
-input[type="text"], input[type="date"], textarea {
-    padding: 10px;
+/* Estilos para los inputs y el textarea */
+form input[type="text"],
+form input[type="date"],
+form textarea {
+    padding: 12px;
     border: 1px solid #ced4da; /* Borde gris claro */
-    border-radius: 4px;
-    width: calc(100% - 22px); 
-    margin-bottom: 15px; 
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fafafa;
+    transition: border 0.3s ease, box-shadow 0.3s ease; /* Transiciones para foco */
 }
 
-textarea {
-    resize: none; 
-    height: 100px; 
+form input:focus,
+form textarea:focus {
+    border-color: #3f51b5; /* Cambia el color de borde al hacer foco */
+    box-shadow: 0 0 8px rgba(63, 81, 181, 0.2); /* Sombra suave al hacer foco */
 }
 
-input[type="submit"] {
-    background-color: #007BFF; /* Azul */
+/* Estilos específicos para el textarea */
+form textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+/* Estilos para el botón */
+form button {
+    background-color: #3f51b5; /* Color de fondo azul vibrante */
     color: white;
-    padding: 10px 15px;
+    padding: 14px 0;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     cursor: pointer;
-    transition: background-color 0.3s; 
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones para hover */
 }
 
-input[type="submit"]:hover {
-    background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+/* Efecto al pasar el cursor por el botón */
+form button:hover {
+    background-color: #303f9f; /* Azul más oscuro al hover */
+    transform: translateY(-2px); /* Pequeño efecto de elevación */
+}
+
+/* Efecto al presionar el botón */
+form button:active {
+    transform: translateY(0); /* Volver a su posición normal */
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    #agregar-curso {
+        padding: 20px;
+        margin: 60px 15px;
+    }
+
+    form button {
+        font-size: 1rem;
+        padding: 12px 0;
+    }
 }

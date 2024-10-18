@@ -1,1 +1,22 @@
-<p>inicio works!</p>
+<div class="project-description">
+  <h1>Proyecto Angular: Galería de Imágenes</h1>
+  <p>
+    Un proyecto Angular es una aplicación de una sola página (SPA) construida utilizando el framework Angular. 
+    Este tipo de aplicaciones ofrecen una experiencia de usuario fluida y rápida al cargar la página una sola vez 
+    y actualizar solo los elementos necesarios en lugar de recargar la página completa. Angular facilita el 
+    desarrollo de aplicaciones dinámicas, escalables y fáciles de mantener.
+  </p>
+  <p>
+    En este proyecto, hemos creado una galería dinámica de imágenes utilizando Angular. La galería obtiene 
+    imágenes aleatorias desde una API externa y las muestra de manera elegante. Cada imagen representa un 
+    elemento de la lista con su respectiva información. Puedes ver las imágenes a continuación:
+  </p>
+</div>
+
+<table border="1" class="image-table">
+  <tr *ngFor="let item of img">
+    <td>
+      <img [src]="item.foto" alt="Foto de {{ item.nombre }}" class="img-thumbnail">
+    </td>
+  </tr>
+</table>
